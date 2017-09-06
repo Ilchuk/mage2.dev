@@ -1,0 +1,381 @@
+// /**
+//  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+//
+//  Email extend styles
+//  _____________________________________________
+//  This file should be used for theme-specific styles for emails that extend or modify the styles in _email.less
+//  This will allow you to edit email styles without copying and editing the _email.less file
+//  Importing fonts from an external CSS file, rather than embedding @font-face declarations inside the <style> tag,
+//  as the latter will cause font rendering issues if the web fonts are inaccessible.
+@import url("@{baseUrl}css/email-fonts.css");
+
+body,
+th,
+td,
+.wrapper-inner {
+  font-family: @email-font-family__base;
+  font-size: @email-font-size__base;
+  line-height: @line-height__xl;
+  color: @email__color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: @email-font-family__base;
+  color: @email__color;
+}
+
+.header {
+  background-color: @email__background-color;
+  padding: @email-body__padding;
+
+  table {
+    width: 100%;
+
+    td {
+      padding-bottom: 0;
+
+      h2 {
+        font-size: 18px;
+        font-weight: @font-weight__bold;
+        margin-top: 20px;
+        color: @email__link-color;
+      }
+    }
+  }
+}
+
+.email-intro {
+  table {
+    td {
+      padding: 31px 20px 20px 0;
+      border-bottom: 1px solid @color_border;
+      border-top: 1px solid @color_border;
+    }
+
+    .email-intro-block {
+      padding: 45px 0 18px 20px;
+      width: 42%;
+      border-left: 1px solid @color_border;
+
+      p {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 1.25;
+    margin-bottom: 25px;
+  }
+
+  .store-phone {
+    font-size: 18px;
+  }
+}
+
+tr.email-summary {
+  td {
+    padding: 11px 0 70px;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 1.25;
+    margin-bottom: 1px;
+    padding: 0;
+    border: none;
+  }
+}
+
+.email-information {
+  > td {
+    padding-bottom: 5px;
+  }
+}
+
+table.order-details {
+  h3 {
+    font-size: @email-font-size__base;
+    font-weight: @h3__font-weight;
+    margin-bottom: 5px;
+  }
+
+  tr {
+    > .address-details,
+    > .method-info {
+      padding-bottom: 33px;
+
+      p {
+        color: @email__color !important;
+      }
+    }
+
+    > .special-info {
+      padding-bottom: 26px;
+    }
+  }
+}
+
+table.email-items {
+  margin: 0 0 44px;
+
+  > thead {
+    > tr {
+      > th {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: normal;
+        padding: 0 5px 4px;
+        border-bottom: 1px solid @color_border;
+
+        &.item-info {
+          padding-left: 0;
+        }
+
+        &.item-price {
+          padding-right: 8%;
+        }
+
+        &.item-qty {
+          width: 62px;
+        }
+
+        &.item-subtotal {
+          padding-right: 30px;
+          text-align: right;
+          width: 58px;
+        }
+      }
+    }
+
+  }
+
+  > tbody {
+    > tr {
+      > td {
+        padding: 15px 5px 7px;
+        border: none;
+
+        &.item-info {
+          font-size: 12px;
+          line-height: 1.5;
+          padding-left: 0;
+
+          .product-name {
+            font-size: @email-font-size__base;
+            margin: 0 0 4px;
+          }
+
+          .sku {
+            color: @email__secondary-color;
+          }
+        }
+
+        &.item-price {
+          text-align: right;
+          padding-right: 8%;
+        }
+
+        &.item-subtotal {
+          padding-right: 30px;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .email-items-space {
+    padding: 22px 0 0;
+  }
+
+  .order-totals {
+    > tr {
+      > th {
+        padding: 6px 11% 6px 30px;
+        background: @email__secondary-background-color;
+      }
+
+      > td {
+        padding: 5px 30px 5px 10px;
+        background: @email__secondary-background-color;
+      }
+    }
+
+    .subtotal {
+      th,
+      td {
+        padding-top: 26px;
+      }
+    }
+
+    .grand_total {
+      th,
+      td {
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: @email__background-color;
+  padding: @email-body__padding;
+
+  table {
+    width: 100%;
+
+    td {
+      p {
+        margin-bottom: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .footer-holder {
+    > td {
+      border-top: 2px solid @email__link-color;
+      padding: 23px 0;
+    }
+
+    > .footer-holder-block {
+      padding: 27px 8px 23px;
+    }
+
+    table {
+      width: auto;
+
+      td {
+        padding: 26px 0 0 10px;
+        width: 46px;
+      }
+    }
+
+    a,
+    a:visited {
+      color: @email__color;
+    }
+
+    p {
+      margin-bottom: 7px;
+    }
+  }
+
+  .footer-frame {
+    td {
+      padding: 26px 20px 25px;
+      background: @email__secondary-background-color;
+      color: @email__secondary-color;
+      font-size: 12px;
+    }
+  }
+
+  .footer-container {
+    td {
+      padding: 27px 20px;
+      font-size: 12px;
+      line-height: 1.25;
+
+      p {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+  .header,
+  .main-content,
+  .footer {
+    padding: @email-body__padding @indent__s !important;
+  }
+
+  .footer,
+  .header,
+  .email-intro {
+    td {
+      display: block;
+      width: auto !important;
+      text-align: left;
+
+      > * {
+        text-align: left;
+      }
+    }
+  }
+
+  .footer {
+    .footer-holder {
+      table {
+        td {
+          display: table-cell !important;
+          padding: 26px 5px !important;
+        }
+      }
+
+      a,
+      a:visited {
+        color: @email__color;
+      }
+
+      p {
+        margin-bottom: 7px;
+      }
+    }
+  }
+
+  .email-intro {
+    table {
+      td {
+        padding: 20px 0 !important;
+      }
+      .email-intro-block {
+        border-left: none !important;
+        border-top: none !important;
+      }
+    }
+  }
+
+  .email-items {
+    margin: 0 0 20px !important;
+
+    th,
+    td {
+      padding-right: 5px !important;
+      width: auto !important;
+    }
+  }
+  .email-items-space {
+    padding: 15px 0 0 !important;
+  }
+
+  .order-totals {
+    th,
+    td {
+      padding: 6px 5px !important;
+    }
+
+    .subtotal {
+      th,
+      td {
+        padding-top: 15px !important;
+      }
+    }
+
+    .grand_total {
+      th,
+      td {
+        padding-bottom: 17px !important;
+      }
+    }
+  }
+}

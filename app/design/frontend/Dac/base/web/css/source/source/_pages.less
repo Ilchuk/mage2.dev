@@ -1,0 +1,65 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .pages {
+    .label {
+      display: none;
+    }
+
+    .item {
+      float: left;
+      border-left: 1px solid @color_border;
+      width: 57px;
+      text-align: center;
+      .lib-font-size(16);
+      line-height: 58px;
+      margin: 0;
+    }
+
+    .page {
+      display: block;
+      color: @color_text__light;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .current .page {
+      background-color: #fff;
+      cursor: default;
+    }
+
+    .action {
+      text-indent: -9999px;
+      overflow: hidden;
+      display: block;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .previous:before {
+      .triangle(left, 10px, 10px, @color_red);
+    }
+
+    .next:before {
+      .triangle(right, 10px, 10px, @color_red);
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+
+}

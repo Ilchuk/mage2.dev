@@ -1,0 +1,99 @@
+// /**
+//  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  h1 {
+    margin-bottom: 20px;
+  }
+  .page-title {
+    margin-top: 20px;
+    color: @color_red;
+    font-weight: @font-weight__regular;
+  }
+  .breadcrumbs + .page-title-wrapper .page-title {
+    margin-top: 0;
+  }
+  ol:not([class]) {
+    li {
+      counter-increment: step-counter;
+      padding: 1px 0 1px 53px;
+      position: relative;
+      margin: 0 0 6px;
+
+      &:before {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        content: counter(step-counter);
+        margin-right: 5px;
+        font-size: 80%;
+        background: @color_red;
+        color: @color-light;
+        font-weight: bold;
+        padding: 7px 2px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+
+  ul:not([class]) {
+
+    li:before {
+      content: ".";
+      margin-right: 10px;
+      font-size: 40px;
+      position: relative;
+      top: -4px;
+      line-height: 11px;
+    }
+  }
+
+  .items {
+    .lib-list-reset-styles();
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  h1 {
+    .lib-css(font-size, @h1__font-size-desktop);
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  body {
+    .lib-font-size(@font-size__base-mobile);
+    line-height: 1.429;
+  }
+
+  ol:not([class]) {
+    li {
+      padding: 0 0 0 32px;
+
+      &:before {
+        margin-right: 5px;
+        font-size: 80%;
+        padding: 5px 2px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

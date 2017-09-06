@@ -1,0 +1,141 @@
+//
+//  Linen theme variables
+//  _____________________________________________
+
+// Layout
+@layout__max-width: 1330px;
+@gutter-width: 0.2;
+@total-columns: 12;
+@layout-indent__width: 20px;
+@layout__width-xs-indent: 15px;
+@grid-gutter-width-desktop: 20px;
+@grid-gutter-width-tablet: 15px;
+
+// Responsive brakepoints
+@screen__xxs: 320px;
+@screen__xss: 370px;
+@screen__xs: 480px;
+@screen__s: 640px;
+@screen__m: 768px;
+@screen__ls: 980px;
+@screen__l: 1025px;
+@screen__mls: 1200px;
+@screen__xl: 1440px;
+
+//
+//  Responsive
+//  _____________________________________________
+
+//
+//  Media variables, that can be used for splitting styles into several files
+//  ---------------------------------------------
+
+@media-common: true; // Sets whether to output common styles (true|false)
+@media-target: 'all'; // Sets target device for styles output (all|desktop|mobile)
+
+//
+//  Media width mixin used to group styles output based on media queries
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__ls) {
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xss) {
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xxs) {
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min') and (@break = @screen__s) and (@extremum = 'max') and (@break = @screen__m) {
+}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min') and (@break = @screen__m) and (@extremum = 'max') and (@break = @screen__l) {
+}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min') and (@break = @screen__m) and (@extremum = 'max') and (@break = @screen__ls) {
+}
+
+//
+//  Style groups for 'mobile' devices
+//  ---------------------------------------------
+
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+  @media only screen and (max-width: (@screen__xs - 1)) {
+    .media-width('max', @screen__xs);
+  }
+  @media only screen and (max-width: (@screen__xss - 1)) {
+    .media-width('max', @screen__xss);
+  }
+
+  @media only screen and (max-width: (@screen__s - 1)) {
+    .media-width('max', @screen__s);
+  }
+
+  @media only screen and (max-width: (@screen__m - 1)) {
+    .media-width('max', @screen__m);
+  }
+
+  @media only screen and (max-width: (@screen__l - 1)) {
+    .media-width('max', @screen__l);
+  }
+  @media only screen and (max-width: (@screen__ls - 1)) {
+    .media-width('max', @screen__ls);
+  }
+
+  @media all and (min-width: @screen__s) {
+    .media-width('min', @screen__s);
+  }
+
+  @media all and (min-width: @screen__xs) {
+    .media-width('min', @screen__xs);
+  }
+
+  @media all and (min-width: @screen__m) and (max-width: (@screen__l - 1)) {
+    .media-width('min', @screen__m, 'max', @screen__l);
+  }
+  @media all and (min-width: @screen__m) and (max-width: (@screen__ls - 1)) {
+    .media-width('min', @screen__m, 'max', @screen__ls);
+  }
+
+  @media all and (min-width: @screen__s) and (max-width: (@screen__m - 1)) {
+    .media-width('min', @screen__s, 'max', @screen__m);
+  }
+  @media all and (min-width: @screen__s) and (max-width: (@screen__l - 1)) {
+    .media-width('min', @screen__s, 'max', @screen__l);
+  }
+}
+
+//
+//  Style groups for 'desktop' devices
+//  ---------------------------------------------
+
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+
+  @media all and (min-width: @screen__m), print {
+    .media-width('min', @screen__m);
+  }
+
+  @media all and (min-width: @screen__l), print {
+    .media-width('min', @screen__l);
+  }
+
+  @media all and (min-width: @screen__mls), print {
+    .media-width('min', @screen__mls);
+  }
+
+  @media all and (min-width: @screen__xl), print {
+    .media-width('min', @screen__xl);
+  }
+}

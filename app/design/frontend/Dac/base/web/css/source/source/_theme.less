@@ -1,0 +1,361 @@
+// Theme colors
+
+@color-black: #000;
+@color-light: #fff;
+@color_red: #B70050;
+@color_red__darker: darken(@color_red, 10%);
+@color_red__lighter: lighten(@color_red, 10%);
+
+@color_blue: #008DA8;
+@color_blue__darker: darken(@color_blue, 10%);
+
+@color_green__light: #B2BB1E;
+@color_green__light___darker: darken(@color_green__light, 10%);
+
+@color_brown__light: #f6f2ef;
+
+@color_tile: @color_brown__light;
+@color_tile__dark: #bda482;
+
+@color_border: #e5dbcd;
+
+@color_text__light: #6D6E71;
+@color_text__brown: #A68462;
+@amasty_price_slider: #E6DCCE;
+
+@color_pink: #c53373;
+
+@text__color: #333;
+
+@ico-btn-border-color: @color_border;
+@ico-btn-bg-color: @color_brown__light;
+@ico-btn-icon-color: @color_red;
+
+@color_warning: #f8971d;
+
+// Theme Typography
+
+//  Font families
+@font-family__base: 'Roboto', @font-family__sans-serif;
+@font-condensed: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+@font-lato: 'Lato', Helvetica, Arial, sans-serif;
+@font-lobster: 'Lobster Two', cursive;
+@font-family__monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+// custom icons
+@custom-icons__font-path: "@{baseDir}fonts/jasco-icons/jasco";
+@custom-icons__font-name: 'jasco';
+
+@icon-jasco-cube: "\e90e";
+@icon-jasco-warning: "\e910";
+@icon-jasco-pencil-outline: "\e90b";
+@icon-jasco-close: "\e90c";
+@icon-jasco-email: "\e907";
+@icon-jasco-mode-grid: "\e906";
+@icon-jasco-mode-list: "\e905";
+@icon-jasco-nuetral-round: "\e904";
+@icon-jasco-error-round: "\e921";
+@icon-jasco-success-round: "\e90f";
+@icon-jasco-google-plus: "\e908";
+@icon-jasco-facebook: "\e900";
+@icon-jasco-twitter: "\e902";
+@icon-jasco-linkedin: "\e909";
+@icon-jasco-pinterest: "\e90a";
+@icon-jasco-plus: "\e91e";
+@icon-jasco-minus: "\e90d";
+@icon-jasco-star-outlined: "\e903";
+@icon-jasco-star: "\e901";
+
+//  Sizes
+@font-size-ratio__base: 1.6;
+@font-size-ratio__base-mobile: 1.4;
+
+@font-size__base-mobile: unit(@font-size-unit-ratio * @font-size-ratio__base-mobile, px); // Base font size value in <b>px</b>
+
+// SVG icons
+@header_icons_sprite: url('../images/icons/icons.svg');
+@trust_icons_sprite: url('../images/icons/trust-icons.svg');
+@social_icons_sprite: url('../images/icons/social-icons.svg');
+
+//  Headings
+@heading__font-family__base: @font-condensed;
+@h1__font-size-desktop: 46px;
+@h1__font-color: @color_red;
+
+@h2__font-size: 36px;
+@h2__font-color: @color_red;
+
+@h3__font-size: 24px;
+@h3__font-color: @color_red;
+
+@h4__font-size: 18px;
+
+@h5__font-size: 16px;
+
+@h6__font-size: 14px;
+
+//Element colors
+@form-element-input-placeholder__color: @color_text__light;
+@border-color__base: @color_border;
+@legend-border-bottom: 1px solid @color_border;
+@dropdown-list__border: 1px solid @color_border;
+
+// Buttons colors
+
+// Font style
+@button__font-family: @font-condensed;
+@button__margin: 0;
+@button__padding: 13px 15px; // is set up to false when buttons don't depend on side paddings or have fixed width
+@button__padding__s: 7px 15px;
+@button__font-size__s: 14px;
+@button__padding__l: 18px 15px;
+@button__font-size__l: 16px;
+@button__shadow: none;
+
+//  Default = secondary button
+@button__color: @color_red;
+@button__background: @color-light;
+@button__border: 1px solid @color_red;
+
+@button__hover__color: @color-light;
+@button__hover__background: @color_red;
+@button__hover__border: @button__border;
+
+@button__active__color: @color-light;
+@button__active__background: @color_red;
+@button__active__border: @button__border;
+
+//  Primary button
+@button-primary__background: @color_red;
+@button-primary__border: none;
+@button-primary__hover__color: @color-white;
+@button-primary__hover__background: darken(@color_red, 15%);
+@button-primary__hover__border: none;
+@button-primary__active__background: @button-primary__hover__background;
+@button-primary__active__border: none;
+@button-primary__active__color: @color-white;
+
+// Theme Spacing
+@widgets-indent__bottom: 0;
+@indent__base: 10px;
+
+//
+//  Form elements inputs default variables
+//  ---------------------------------------------
+
+@form-element-input__height: 44px;
+@form-element-input__border-color: @color_border;
+@form-element-input__border-radius: 3px;
+@form-element-input__padding: 0 15px;
+@form-element-input__color: @color-black;
+
+//  Placeholder
+@form-element-input-placeholder__color: @color_text__light;
+
+//  Disabled state
+@form-element-input__disabled__opacity: 1;
+@form-element-input__disabled__color: #6d6e71;
+
+//  Form field label
+@form-field-label__font-size: 16px;
+@form-field-label__font-family: @font-family__base;
+@form-field-label__font-weight: @font-weight__regular;
+@form-field-label__line-height: 24px;
+@form-field-type-label-block__margin: 0 0 12px;
+
+@form-field-type-block__margin: 0 0 23px;
+
+//
+//  Layout variables
+//  _____________________________________________
+
+//  Variables for layout columns
+@layout-column-main__width-2-left: 9;
+@layout-column-main__width-2-right: 9;
+@layout-column__sidebar-width: 2.94;
+@layout-indent__width: 20px;
+@layout__width-xs-indent: 10px;
+
+//  Checkout columns width
+@layout-column-checkout__width-left: 2.94;
+@layout-column-checkout__width-main: 9;
+
+//
+//  Tabs
+//  ---------------------------------------------
+
+// Tab controls
+@tab-control__height: 54px;
+@tab-control__margin-right: 10px;
+@tab-control__font-family: @font-condensed;
+@tab-control__font-size: 16px;
+@tab-control__line-height: @tab-control__height - 2;
+@tab-control__active__color: @color_red;
+@tab-control__border-color: @color_border;
+
+@accordion-control__padding-top: 14px;
+@accordion-control__padding-bottom: @accordion-control__padding-top;
+@accordion-control__padding-left: 14px;
+@accordion-control__padding-right: @accordion-control__padding-left + 22;
+
+@tab-control__border-color-active: @color_red;
+@tab-control__background-color: @color_brown__light;
+@tab-control__active__background-color: @color-white;
+@tab-control__hover__background-color: @tab-control__active__background-color;
+@tab-control__color: black;
+
+// Navigation
+
+@navigation__background: @color-white;
+
+//  Current tab
+@tab-content__padding-top: 0;
+@tab-content__padding-bottom: 20px;
+@tab-content__padding-left: 15px;
+@tab-content__padding-right: @tab-content__padding-left;
+
+//
+//  Accordions
+//  ---------------------------------------------
+
+@accordion-control__font-size: 16px;
+
+//
+//  Links
+//  ---------------------------------------------
+
+@link__color: @color_red;
+@link__text-decoration: underline;
+
+@link__visited__color: @link__color;
+@link__visited__text-decoration: none;
+
+@link__hover__color: @color_red;
+@link__hover__text-decoration: none;
+
+@link__active__color: @color_red;
+@link__active__text-decoration: none;
+
+//
+//  Breadcrumbs variables
+//  _____________________________________________
+
+@breadcrumbs__font-size: 11px;
+@breadcrumbs__padding: 0 5px;
+@breadcrumbs-icon__use: false;
+@breadcrumbs-separator__symbol: '|';
+@breadcrumbs-separator__color: @color_red;
+
+//  Current page
+@breadcrumbs-current__color: @color-black;
+
+//
+//  Link
+//  ---------------------------------------------
+
+//  Gradient
+@breadcrumbs-link__color: @color-black;
+
+//  Visited
+@breadcrumbs-link__visited__color: @color-black;
+
+//  Hover
+@breadcrumbs-link__hover__color: @color_red;
+@breadcrumbs-link__hover__text-decoration: none;
+
+//  Active
+@breadcrumbs-link__active__color: @color-black;
+
+//
+//  Messages variables
+//  _____________________________________________
+@message__padding: 9px @indent__base;
+
+//
+//  Cart variables
+//  _____________________________________________
+@mobile-cart-padding: 0;
+//
+//  Tables
+//  ---------------------------------------------
+
+@table-cell__padding-vertical: 4px;
+
+//
+//  Rating variables
+//  _____________________________________________
+
+@rating-icon__count: 5;
+@rating-icon__content: @icon-jasco-star-outlined;
+@rating-icon__result-content: @icon-jasco-star;
+@rating-icon__font: @custom-icons__font-name;
+@rating-icon__font-size: 18px;
+@rating-icon__letter-spacing: 2px;
+@rating-icon__color: #f8971d;
+@rating-icon__active__color: @rating-icon__color;
+@rating-label__hide: false;
+
+//
+//  Messages variables
+//  _____________________________________________
+@message__padding: 16px @indent__base;
+@message__font-size: 14px;
+@message__border-width: 1px;
+@message__border-color: transparent;
+@message__border-style: solid;
+@message__border-radius: 3px;
+@message-icon__font-size: 18px;
+@message-icon__font-line-height: 18px;
+@message-icon__top: 10px;
+@message__margin: 0 0 20px;
+
+//  Information message
+@message-info__color: #ffcf01;
+@message-info__background: transparent;
+@message-info__border-color: #ffcf01;
+@message-info-link__color: #ffcf01;
+@message-info-link__color-hover: #ffcf01;
+@message-info-link__color-active: #ffcf01;
+@message-info-icon: @icon-jasco-nuetral-round;
+@message-info-icon__color-inner: #ffcf01;
+
+//  Warning message
+@message-warning__color: #ffcf01;
+@message-warning__background: transparent;
+@message-warning__border-color: #ffcf01;
+@message-warning-link__color: #ffcf01;
+@message-warning-link__color-hover: #ffcf01;
+@message-warning-link__color-active: #ffcf01;
+@message-warning-icon: @icon-jasco-nuetral-round;
+@message-warning-icon__color-inner: #ffcf01;
+
+//  Error message
+@message-error__color: #ef0d22;
+@message-error__background: transparent;
+@message-error__border-color: #ef0d22;
+@message-error-link__color: #ef0d22;
+@message-error-link__color-hover: #ef0d22;
+@message-error-link__color-active: #ef0d22;
+@message-error-icon: @icon-jasco-error-round;
+@message-error-icon__color-inner: #ef0d22;
+
+//  Success message
+@message-success__color: @color_green__light;
+@message-success__background: transparent;
+@message-success__border-color: @color_green__light;
+@message-success-link__color: @color_green__light;
+@message-success-link__color-hover: @color_green__light;
+@message-success-link__color-active: @color_green__light;
+@message-success-icon: @icon-jasco-success-round;
+@message-success-icon__color-inner: @color_green__light;
+
+//  Notice message
+@message-notice__color: #ffcf01;
+@message-notice__background: transparent;
+@message-notice__border-color: #ffcf01;
+@message-notice-link__color: #ffcf01;
+@message-notice-link__color-hover: #ffcf01;
+@message-notice-link__color-active: #ffcf01;
+@message-notice-icon: @icon-jasco-nuetral-round;
+@message-notice-icon__color-inner: #ffcf01;
+
